@@ -55,12 +55,14 @@ public class GreetingResource {
             throw new InternalServerErrorException("Principal and JsonWebToken names do not match");
         } else {
             name = ctx.getUserPrincipal().getName();
+
         }
         return String.format("hello + %s,"
                         + " isHttps: %s,"
                         + " authScheme: %s,"
-                        + " hasJWT: %s",
-                name, ctx.isSecure(), ctx.getAuthenticationScheme(), hasJwt());
+                        + " hasJWT: %s,"
+                        + " mail: %s",
+                name, ctx.isSecure(), ctx.getAuthenticationScheme(), hasJwt(), jwt.getClaim("email"));
     }
 
 
