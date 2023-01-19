@@ -21,6 +21,7 @@ public class GreetingResource {
     JsonWebToken jwt;
 
     @GET
+    @PermitAll
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/greeting/{name}")
     public String greeting(String name) {
@@ -28,6 +29,7 @@ public class GreetingResource {
     }
 
     @GET
+    @PermitAll
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         return "hello";
