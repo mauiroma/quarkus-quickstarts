@@ -25,6 +25,7 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/greeting/{name}")
     public String greeting(String name) {
+        System.out.println("Greeting");
         return service.greeting(name);
     }
 
@@ -32,6 +33,7 @@ public class GreetingResource {
     @PermitAll
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
+        System.out.println("Hello");
         return "hello";
     }
 
@@ -40,6 +42,7 @@ public class GreetingResource {
     @PermitAll
     @Produces(MediaType.TEXT_PLAIN)
     public String hello(@Context SecurityContext ctx) {
+        System.out.println("permit-all");
         return getResponseString(ctx);
     }
 
