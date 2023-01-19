@@ -5,6 +5,7 @@
   <groupId>org.acme</groupId>
   <artifactId>security-jwt-quickstart</artifactId>
   <version>1.0.0-SNAPSHOT</version>
+
   <properties>
     <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
@@ -13,7 +14,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
+    <compiler-plugin.version>3.8.1</compiler-plugin.version>
+    <maven.compiler.parameters>true</maven.compiler.parameters>
   </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -53,6 +57,7 @@
       <artifactId>quarkus-resteasy-reactive-jackson</artifactId>
     </dependency>
   </dependencies>
+
   <build>
     <finalName>${project.artifactId}</finalName>
     <plugins>
